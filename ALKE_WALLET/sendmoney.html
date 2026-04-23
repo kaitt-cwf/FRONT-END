@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alke Wallet - Transferir</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+
+        <a class="navbar-brand" href="index.html"><strong>Alke-Wallet</strong></a>
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="menu.html">Volver al Menú</a>
+          </li>
+        </ul>
+
+      </div>
+
+    </nav>
+  </header>
+
+  <main class="container py-5">
+    <section class="card shadow-sm p-4 mx-auto" style="max-width: 600px;">
+
+      <h2 class="text-center mb-4"><strong>Transferir</strong></h2>
+      
+      <form id="transferForm">
+
+        <div class="form-group">
+          <label for="buscarContacto">Destinatario:</label>
+          
+          <div class="input-group">
+
+            <input type="text" id="buscarContacto" class="form-control" placeholder="Ingrese nombre o email" required>
+
+            <div class="input-group-append">
+              <button class="btn btn-outline-primary" type="button" id="btnBuscar">Buscar</button>
+            </div>
+
+          </div>
+
+          <div id="feedbackBusqueda" class="mt-2 small text-muted"></div>
+
+        </div>
+                
+        <div class="form-group mt-4">
+          <label for="montoEnviar">Monto a enviar:</label>
+          <input type="number" id="montoEnviar" class="form-control" placeholder="$0" min="1" required>
+        </div>
+                
+        <button type="submit" class="btn btn-primary btn-block btn-lg mb-3">Realizar Transferencia</button>
+
+      </form>
+            
+      <div class="text-center">
+        <hr>
+        <p class="text-muted small">¿El destinatario no está en tu lista?</p>
+        <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#modalContacto">
+            Agregar nuevo contacto
+        </button>
+      </div>
+
+    </section>
+  </main>
+
+  <div class="modal fade" id="modalContacto" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title">Nuevo Contacto</h5>
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+
+        </div>
+
+        <div class="modal-body">
+
+          <form id="formNuevoContacto">
+
+            <div class="form-group">
+              <label>Nombre:</label>
+              <input type="text" class="form-control" id="nombreContacto" required>
+            </div>
+
+            <div class="form-group">
+              <label>Email:</label>
+              <input type="email" class="form-control" id="emailContacto" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block">Guardar Contacto</button>
+            
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+  <footer class="text-center mt-auto bg-dark text-white py-3">
+    <p class="mb-0">&copy; 2026 Alke Wallet. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
